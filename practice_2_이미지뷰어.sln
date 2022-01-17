@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "practice_2_이미지뷰어", "practice_2_이미지뷰어\practice_2_이미지뷰어.csproj", "{BFEA67E4-1EF8-4885-BDB6-C29243F8C2D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFEA67E4-1EF8-4885-BDB6-C29243F8C2D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFEA67E4-1EF8-4885-BDB6-C29243F8C2D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFEA67E4-1EF8-4885-BDB6-C29243F8C2D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFEA67E4-1EF8-4885-BDB6-C29243F8C2D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2AD2FB3A-BEDE-41C5-A4FC-A04CB7769F51}
+	EndGlobalSection
+EndGlobal
