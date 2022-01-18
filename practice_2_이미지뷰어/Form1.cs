@@ -28,16 +28,21 @@ namespace practice_2_이미지뷰어
                 //선택된 주소를 textbox1에 표시
                 textBox1.Text = folderBrowserDialog.SelectedPath;
                 //파일 목록 표시하는 곳 깨끗이 리셋하고
-                listBox1.Items.Clear();
+                listView1.Items.Clear();
                 //새로 받아온 목록 표시
                 System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(folderBrowserDialog.SelectedPath);
                 System.IO.FileInfo[] fi = di.GetFiles();
                 
                 foreach(System.IO.FileInfo f in fi)
                 {
-                    if(f.Extension == ".jpg" || f.Extension == ".jpeg" || f.Extension == ".gif" || f.Extension == ".png" || f.Extension == ".jfif")
+                    if(f.Extension == ".JPG" || f.Extension == ".jpeg" || f.Extension == ".GIF" || f.Extension == ".png" || f.Extension == ".jfif" || f.Extension == ".bmp")
                     {
-                        listBox1.Items.Add(f);
+                        ListViewItem lvi = new ListViewItem(f.Name.Replace(f.Extension, ""));
+                        lvi.SubItems.Add(f.Extension);
+                        lvi.SubItems.Add(f.Length.ToString());
+                        lvi.ImageIndex = 0;
+
+                        listView1.Items.Add(lvi);
                     }
                 }
             }
@@ -48,6 +53,26 @@ namespace practice_2_이미지뷰어
 
         }
 
+        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (listView1.SelectedItems.Count == 1)
+            {
+                ListView.SelectedListViewItemCollection items = listView1.SelectedItems;
+                ListViewItem lvi = items[0];
+                string whatisfile = folderBrowserDialog.SelectedPath.ToString() + "\\" + lvi.SubItems[0].Text + lvi.SubItems[1].Text;
+                pictureBox1.Image = Image.FromFile(whatisfile);
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        /*
         private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             //인덱스 저장할 변수
@@ -66,5 +91,6 @@ namespace practice_2_이미지뷰어
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
+        */
     }
 }
